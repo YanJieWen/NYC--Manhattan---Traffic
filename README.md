@@ -80,9 +80,13 @@ All data is persisted and saved as pkl data, which follows a unified data loadin
 
 ## contributing
 
-Geospatial Processing Consulting：[Xiaoyu Wang](591176637@qq.com)
-code technology exchange： [Yanjie Wen](obitowen@csu.edu.cn)
+Geospatial Processing Contact：591176637@qq.com
+code Contact： obitowen@csu.edu.cn
 At last, thank you very much for the contribution of the co-author in the article, and also thank my girlfriend for giving me the courage to pursue for a Ph.d.
+
+## License
+
+[MIT](LICENSE) © YanjieWen
 
 
 
