@@ -75,8 +75,8 @@ Next, we will introduce the details of each mode of transportation separately.
 
 ## How-to-load
 All data is persisted and saved as pkl data, which follows a unified data loading format.  
-**Visualization**
-![image](pc/framework.png)
+**Visualization**  
+![image](in-out.png)
 
 
 
