@@ -29,11 +29,13 @@ in the terminal.
 Next, we will introduce the details of each mode of transportation separately.
 
 ### Yellow-Taxi
-纽约黄牌出租车的数据获取地址：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
-数据的扩展名为：```PARQUET```   
-黄牌出租和绿牌出租的区别： 黄色出租(Yellow TAXI)车可以在纽约五大区（布朗克斯区、布鲁克林区、曼哈顿、皇后区、斯塔滕岛）内任何地点搭载乘客。绿色出租车(Green TAXI)则被规定只允许在上曼哈顿、布朗克斯区、皇后区和斯塔滕岛接客. 
-数据处理的流程：出行时间以及出行距离不合理的订单被删除。
-数据描述：删除掉岛屿的分区后，曼哈顿区一共63个分区，邻接矩阵从小到大编号。共计出行记录2925万条，平均每日出行量为15.9W.  
-输出格式： 数据被持久化为`pkl`.格式为`Orderdict{0:[Sparse OD,TIMESTEMP]}`
+Data source address：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
+Extension：```PARQUET```   
+The difference between Yellow Taxi and Green Taxi: Yellow taxi (Yellow TAXI) can pick up passengers anywhere in the five major districts of New York (Bronx, Brooklyn, Manhattan, Queens, Staten Island). Green taxis are only allowed to pick up passengers in Upper Manhattan, the Bronx, Queens and Staten Island.
+Processing: orders with unreasonable travel time and travel distance are dropped。
+Description: After deleting the partitions of the islands, there are a total of ``63`` partitions in Manhattan, and the adjacency matrix is numbered from small to large. A total of ``29.25 million`` travel records, with an average daily travel volume of ``15.9W``. 
+Output Format: Data is persisted as `pkl`.Format is`Orderdict{0:[Sparse OD,TIMESTEMP]}`
+More details: [ytaxi.py](datasets/yellow_taxi/ytaxi.py)  
+How to run it: ``` python data_main.py --type 0```  
 
 
