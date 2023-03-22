@@ -29,13 +29,13 @@ in the terminal.
 Next, we will introduce the details of each mode of transportation separately.
 
 ### Yellow-Taxi
-Data source address：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
-Extension：```PARQUET```   
-The difference between Yellow Taxi and Green Taxi: Yellow taxi (Yellow TAXI) can pick up passengers anywhere in the five major districts of New York (Bronx, Brooklyn, Manhattan, Queens, Staten Island). Green taxis are only allowed to pick up passengers in Upper Manhattan, the Bronx, Queens and Staten Island.
-Processing: orders with unreasonable travel time and travel distance are dropped。
-Description: After deleting the partitions of the islands, there are a total of ``63`` partitions in Manhattan, and the adjacency matrix is numbered from small to large. A total of ``29.25 million`` travel records, with an average daily travel volume of ``15.9W``. 
-Output Format: Data is persisted as `pkl`.Format is`Orderdict{0:[Sparse OD,TIMESTEMP]}`  
-More details: [ytaxi.py](datasets/yellow_taxi/ytaxi.py)  
-How to run it: ``` python data_main.py --type 0```  
+**Data source address**：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
+**Extension**：```PARQUET```   
+**The difference between Yellow Taxi and Green Taxi**: Yellow taxi (Yellow TAXI) can pick up passengers anywhere in the five major districts of New York (Bronx, Brooklyn, Manhattan, Queens, Staten Island). Green taxis are only allowed to pick up passengers in Upper Manhattan, the Bronx, Queens and Staten Island.
+**Processing**: orders with unreasonable travel time and travel distance are dropped。
+**Description**: After deleting the partitions of the islands, there are a total of ``63`` partitions in Manhattan, and the adjacency matrix is numbered from small to large. A total of ``29.25 million`` travel records, with an average daily travel volume of ``15.9W``. 
+**Output Format**: Data is persisted as `pkl`.Format is`Orderdict{0:[Sparse OD,TIMESTEMP]}`  
+**More details**: [ytaxi.py](datasets/yellow_taxi/ytaxi.py)  
+**How to run it**: ``` python data_main.py --type 0```  
 
 
