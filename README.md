@@ -6,7 +6,7 @@ This is a data processing project that involves the three-peak multimodal transp
 
 - [Data Description](#DD)
 - [Instructions](#Instructions)
-	- [Yellow Taxi](#Yellow Taxi)
+	- [Yellow Taxi](#YT)
 	- [Subway](#Subway)
   	- [Bike](#Bike)
   	- [Secondary Information](#SecondaryInformatio)
