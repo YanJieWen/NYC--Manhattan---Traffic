@@ -9,7 +9,7 @@ This is a data processing project that involves the three-peak multimodal transp
 	- [Yellow Taxi](#Yellow-Taxi)
 	- [Subway](#Subway)
   	- [Bike](#Bike)
-  	- [Secondary Information](#SecondaryInformation)
+  	- [Secondary Information](#Secondary-Information)
 - [How to load](#How-to-load)
 - [Contributing](#contributing)
 - [License](#license)
@@ -63,7 +63,7 @@ Next, we will introduce the details of each mode of transportation separately.
 
 
 
-### SecondaryInformation
+### Secondary-Information
 **Data source address**：[Synoptic Data](https://developers.synopticdata.com/)&[POI](https://data.cityofnewyork.us/City-Government/Points-Of-Interest/rxuy-2muj).  
 **Extension**：```CSV&ZIP```     
 **Processing**: Meteorological data fills forward the weather conditions and wind speed data. According to the [literature](https://dl.acm.org/doi/abs/10.1145/2820783.2820837)  , the weather conditions are divided into 4 categories, `snowy`, `rainy`, `foggy`, and `sunny`. The POI data counts the number of each class in each Manhattan subdivision according to `13` types.  
