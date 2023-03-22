@@ -31,6 +31,9 @@ Next, we will introduce the details of each mode of transportation separately.
 ### Yellow-Taxi
 纽约黄牌出租车的数据获取地址：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
 数据的扩展名为：```PARQUET```   
-黄牌出租和绿牌出租的区别： 黄色出租(Yellow TAXI)车可以在纽约五大区（布朗克斯区、布鲁克林区、曼哈顿、皇后区、斯塔滕岛）内任何地点搭载乘客。绿色出租车(Green TAXI)则被规定只允许在上曼哈顿、布朗克斯区、皇后区和斯塔滕岛接客.  
-数据处理的流程：
+黄牌出租和绿牌出租的区别： 黄色出租(Yellow TAXI)车可以在纽约五大区（布朗克斯区、布鲁克林区、曼哈顿、皇后区、斯塔滕岛）内任何地点搭载乘客。绿色出租车(Green TAXI)则被规定只允许在上曼哈顿、布朗克斯区、皇后区和斯塔滕岛接客. 
+数据处理的流程：出行时间以及出行距离不合理的订单被删除。
+数据描述：删除掉岛屿的分区后，曼哈顿区一共63个分区，邻接矩阵从小到大编号。共计出行记录2925万条，平均每日出行量为15.9W.  
+输出格式： 数据被持久化为`pkl`.格式为`Orderdict{0:[Sparse OD,TIMESTEMP]}`
+
 
