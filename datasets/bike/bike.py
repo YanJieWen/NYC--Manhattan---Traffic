@@ -126,7 +126,7 @@ class Data_bike():
                 od_matrix[od[0], od[1]] += 1
             od_matrix = sp.csr_matrix(od_matrix, dtype=np.float32)
             od_dict[idx] = [od_matrix, time_]
-            return od_dict,list(zone_dict.keys())
+        return od_dict,list(zone_dict.keys())
 
     def run_process(self):
         self._logger.info('--Begining!There are total 5 steps for NYC bike!')
