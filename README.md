@@ -30,12 +30,25 @@ Next, we will introduce the details of each mode of transportation separately.
 
 ### Yellow-Taxi
 **Data source address**：[TLC Trip Record Data](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page).  
-**Extension**：```PARQUET```   
+**Extension**：```PARQUET```     
 **The difference between Yellow Taxi and Green Taxi**: Yellow taxi (Yellow TAXI) can pick up passengers anywhere in the five major districts of New York (Bronx, Brooklyn, Manhattan, Queens, Staten Island). Green taxis are only allowed to pick up passengers in Upper Manhattan, the Bronx, Queens and Staten Island.
-**Processing**: orders with unreasonable travel time and travel distance are dropped。
-**Description**: After deleting the partitions of the islands, there are a total of ``63`` partitions in Manhattan, and the adjacency matrix is numbered from small to large. A total of ``29.25 million`` travel records, with an average daily travel volume of ``15.9W``. 
-**Output Format**: Data is persisted as `pkl`.Format is`Orderdict{0:[Sparse OD,TIMESTEMP]}`  
-**More details**: [ytaxi.py](datasets/yellow_taxi/ytaxi.py)  
-**How to run it**: ``` python data_main.py --type 0```  
+**Processing**: orders with unreasonable travel time and travel distance are dropped.    
+**Description**: After deleting the partitions of the islands, there are a total of ``63`` partitions in Manhattan, and the adjacency matrix is numbered from small to large. A total of ``29.25 million`` travel records, with an average daily travel volume of ``15.9W``.   
+**Output Format**: Data is persisted as `pkl`.Format is`Orderdict{0:[Sparse OD,TIMESTEMP]}`    
+**More details**: [ytaxi.py](datasets/yellow_taxi/ytaxi.py)    
+**How to run it**: ``` python data_main.py --type 0```    
+
+
+### Subway
+**Data source address**：[MTA](https://toddwschneider.com/dashboards/nyc-subway-turnstiles/).  
+**Extension**：```ZIP```   
+**Station Match**:  The spatial data of subway stations has troubled me for a long time. There is a difference between the geographic file [MTA NYC Transit Subway](https://archive.nyu.edu/handle/2451/34759) and the one provided by the MTA. We stitch it manually according to the station-line.   
+**Processing**: The core task is the processing of the temporal dimension, which includes `4` parts: delete duplicate data; delete records where the cumulative data of the next day is less than the cumulative data of the previous day; Delete the value with too much input and output (set to `0`); since some stations are not strictly 4-hour sampling, we time-align them.  
+**Description**: A total of `93` stations were adopted after data processing.   
+**Output Format**: Data is persisted as `pkl`.Format is`[[N,T,2],STATION INDEX]`  
+**More details**: [subway.py](datasets/subway/subway.py)  
+**How to run it**: ```python data_main.py --file_path ./datasets/subway --type 2 --extenstion txt --zone_path  ./datasets/subway/stations.csv --pkl_path subway.pkl```
+
+
 
 
