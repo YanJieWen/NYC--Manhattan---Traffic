@@ -1,0 +1,14 @@
+乘车编号
+可骑乘型
+开始于
+结束于
+起始站名
+起点站号
+终点站名
+终端站ID
+起始纬度
+起始经度
+结束纬度
+结束经度
+会员或休闲骑
+终端运行程序：python data_main.py --file_path ./datasets/bike --type 1 --extenstion zip --zone_path  ./datasets/bike/station_id_mat.csv --pkl_path bike.pkl

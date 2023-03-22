@@ -1,0 +1,18 @@
+1.原始表的字段说明
+Control Area (A002) 
+UNIT = Remote Unit for a station (R051) 
+SCP = Subunit Channel Position represents设备的特定地址 (02-00-00) 
+STATION = 表示设备所在的车站名称
+LINENAME = 表示可以在此车站登上的所有火车线路
+           通常线路由一个字符表示。LINENAME 456NQR 代表 4、5、6、N、Q 和 R 列车的列车服务器。
+DIVISION = 表示线路最初属于 BMT、IRT 或 IND    
+DATE = 表示日期 (MM-DD-YY)
+TIME = 表示计划审计事件的时间 (hh:mm:ss) 
+DESc = 表示“REGULAR”计划审计事件（通常每 4 小时发生一次）
+           1. 由于计划或故障排除活动，审计可能发生超过 4 小时. 
+           2. 此外，可能还有一个“RECOVR AUD”条目：这是指已恢复的漏审。
+ENTRIES = 设备的累计入口寄存器值
+EXIST = 设备的累积出口寄存器值
+
+终端运行：python data_main.py --file_path ./datasets/subway --type 2 --extenstion txt --zone_path  ./datasets/subway/stations.csv --pkl_path subway.pkl
+一共保存了93个有效的站点，[形状为[n,t,2],[站点从小到大的索引]]，2为进入和出口的量
