@@ -4,13 +4,13 @@ This is a data processing project that involves the three-peak multimodal transp
 
 ## Contents
 
-- [Data Description](#data description)
+- [Data_Description](#Data Description)
 - [Instructions](#Instructions)
 	- [Yellow Taxi](#Yellow Taxi)
 	- [Subway](#Subway)
   	- [Bike](#Bike)
-  	- [Secondary Information](#Secondary Informatio)
-- [How to load](#How to load)
+  	- [Secondary_Information](#Secondary Informatio)
+- [How_to_load](#How to load)
 - [Contributing](#contributing)
 - [License](#license)
 
